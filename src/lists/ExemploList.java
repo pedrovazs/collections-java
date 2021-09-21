@@ -20,6 +20,7 @@ public class ExemploList {
         System.out.println(notas);
 
         // Para sabermos o index de algum elemento usamos o método indexOf(elemento).
+        // Obs.: Se houver dois elementos iguais o método retornará somente o primeiro que vier.
         var nota = notas.indexOf(9.3);
         System.out.println("O index é: " + nota);
 
