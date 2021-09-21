@@ -61,5 +61,6 @@ public class ExemploLinkedList {
 
         System.out.println(notas);
 
+        // Adicionar mais métodos
     }
 }
