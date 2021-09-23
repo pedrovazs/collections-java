@@ -29,18 +29,20 @@ public class ExemploOrdenacaoList {
         System.out.println(listaGato);
 
         System.out.println("--\tOrdem Nome\t--");
-        // Para ordenar de acordo com o nome, primeiro a classe precisa implementar a interface Comparable.
+        // Para ordenar conforme o nome, primeiro a classe precisa implementar a interface Comparable feita logo a
+        // baixo
         Collections.sort(listaGato);
         System.out.println(listaGato);
 
         System.out.println("--\tOrdem Idade\t--");
-        // Para fazer a ordem pela idade a classe precisa implementar a interface Comparator.
+        // Para fazer a ordem pela idade a classe precisa implementar a interface Comparator feita logo a baixo
         //Collections.sort(listaGato, new ComparatorIdade());
         listaGato.sort(new ComparatorIdade());
         System.out.println(listaGato);
 
         System.out.println("--\tOrdem Cor\t--");
-        // Da mesma forma que a ordenação por idade, a ordenação por cor precisa de uma classe que implementa Comparator
+        // Da mesma forma que a ordenação por idade, a ordenação por cor precisa de uma classe que implementa
+        // comparator, que está logo a baixo.
         listaGato.sort(new ComparatorCor());
         System.out.println(listaGato);
 
@@ -50,6 +52,7 @@ public class ExemploOrdenacaoList {
     }
 }
 
+// Classe feita para demonstrar comparable
 class Gato implements Comparable<Gato>{
 
     private String nome;
@@ -66,24 +69,12 @@ class Gato implements Comparable<Gato>{
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
     public Integer getIdade() {
         return idade;
     }
 
-    public void setIdade(Integer idade) {
-        this.idade = idade;
-    }
-
     public String getCor() {
         return cor;
-    }
-
-    public void setCor(String cor) {
-        this.cor = cor;
     }
 
     @Override
@@ -102,14 +93,15 @@ class Gato implements Comparable<Gato>{
     }
 }
 
+// Classe feita para demonstrar comparator
 class ComparatorIdade implements Comparator<Gato> {
-
     @Override
     public int compare(Gato g1, Gato g2) {
         return Integer.compare(g1.getIdade(), g2.getIdade());
     }
 }
 
+// Classe feita para demonstrar comparator
 class ComparatorCor implements Comparator<Gato> {
     @Override
     public int compare(Gato g1, Gato g2) {
@@ -117,6 +109,7 @@ class ComparatorCor implements Comparator<Gato> {
     }
 }
 
+// Classe feita para demonstrar comparator
 class ComparatorNomeIdadeCor implements Comparator<Gato> {
     @Override
     public int compare(Gato g1, Gato g2) {
