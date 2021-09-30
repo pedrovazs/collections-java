@@ -109,7 +109,7 @@ public class ExemploMap {
         carrosPopulares.clear();
 
         // Para conferirmos se o Map está vazio usamos o método isEmpty()
-        System.out.println(carrosPopulares.isEmpty());
+        System.out.println("Está vazio: " + carrosPopulares.isEmpty());
 
     }
 }
