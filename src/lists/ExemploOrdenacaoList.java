@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Function;
 
 public class ExemploOrdenacaoList {
 
@@ -38,14 +39,19 @@ public class ExemploOrdenacaoList {
         // Para fazer a ordem pela idade a classe precisa implementar a interface Comparator feita logo a baixo
         //Collections.sort(listaGato, new ComparatorIdade());
         listaGato.sort(new ComparatorIdade());
+        
+        // Podemos usar também uma lambda para fazermos a comparação.
+        listaGato.sort(Comparator.comparing(gato -> gato.getIdade()));
         System.out.println(listaGato);
 
         System.out.println("--\tOrdem Cor\t--");
         // Da mesma forma que a ordenação por idade, a ordenação por cor precisa de uma classe que implementa
-        // comparator, que está logo a baixo.
-        listaGato.sort(new ComparatorCor());
+        // comparator, neste caso usaremos method reference.
+        listaGato.sort(Comparator.comparing(Gato::getCor));
         System.out.println(listaGato);
 
+
+        // Assim como os outros usaremos a interface comparator, só que usando uma classe anônima
         System.out.println("--\tOrdem Nome/Idade/Cor\t--");
         listaGato.sort(new Comparator<Gato>() {
             @Override
